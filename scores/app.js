@@ -11,7 +11,7 @@ app.get("/", function(req, res) {
 
 app.get("/competitions", function(req, res){
     var restRequest = {
-        headers: { 'X-Auth-Token': '687e3db98f674985b1a381277cee6caf' },
+        headers: { 'X-Auth-Token': '***************' },
         url: 'http://api.football-data.org/v1/competitions?timeFrame=n1',
         dataType: 'json',
         type: 'GET'
@@ -26,7 +26,7 @@ app.get("/competitions", function(req, res){
 
 app.get("/teams", function(req, res){
     var restRequest = {
-        headers: { 'X-Auth-Token': '687e3db98f674985b1a381277cee6caf' },
+        headers: { 'X-Auth-Token': '***************' },
         url: 'http://api.football-data.org/v1/teams?timeFrame=n1',
         dataType: 'json',
         type: 'GET'
