@@ -1,0 +1,54 @@
+<% include partials/header %> 
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Fixtures</h1>
+         </div>
+     </header>
+     
+</div>
+
+<div class = "container">
+        <% data["fixtures"].forEach(function(fixture) { %>
+            <div id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="card">
+                <div class="card-header" role="tab" id="headingOne">
+                  <h5 class="mb-0">
+                      
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span class = 'homeTeam'>
+                      <%= fixture["homeTeamName"] %> <strong>
+                    </span>
+                    <span class = 'score'>
+                      <% if (fixture["status"] === "FINISHED") {%>
+                          <%= fixture["result"]["goalsHomeTeam"] %>
+                        <% } else {%>
+                            <strong>-</strong>
+                        <% } %>
+                    </span>
+                    <span class = 'vs'>
+                        <strong>
+                            vs
+                        </strong>
+                    </span>
+                    <span class = 'score'>
+                      <% if (fixture["status"] === "FINISHED") {%>
+                          <%= fixture["result"]["goalsAwayTeam"] %>
+                        <% } else {%>
+                            <strong>-</strong>
+                        <% } %>
+                    </span>
+                    <span class = 'awayTeam'>
+                         <%= fixture["awayTeamName"] %>
+                    </span>
+                    </a>
+                  </h5>
+                </div>
+             </div>
+            </div>
+        <% }) %>
+</div>
+
+
+<% include partials/footer %>
